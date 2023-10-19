@@ -50,7 +50,7 @@ void my_print_stack(stack_t **stack, unsigned int line_number)
  * @stack: Pointer to a pointer pointing to the top node of the stack.
  * @line_numberr: Integer representing the line number of the opcode.
  */
-void pop_top(stack_t **stack, unsigned int line_number)
+void my_pop_top(stack_t **stack, unsigned int line_number)
 {
 	stack_t *tmp;
 
@@ -69,7 +69,7 @@ void pop_top(stack_t **stack, unsigned int line_number)
  * @stack: Pointer to a pointer pointing to top node of the stack.
  * @line_number: Interger representing the line number of of the opcode.
  */
-void print_top(stack_t **stack, unsigned int line_number)
+void my_print_top(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
 		more_err(6, line_number);

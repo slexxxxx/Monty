@@ -11,7 +11,7 @@ void open_file(char *file_name)
 	FILE *fd = fopen(file_name, "r");
 
 	if (file_name == NULL || fd == NULL)
-		err(2, file_name);
+		err_nabil(2, file_name);
 
 	read_file(fd);
 	fclose(fd);
@@ -85,21 +85,21 @@ void find_func(char *opcode, char *value, int ln, int format)
 	int flag;
 
 	instruction_t func_list[] = {
-		{"push", add_to_stack},
-		{"pall", print_stack},
-		{"pint", print_top},
+		{"push", my_add_to_stack},
+		{"pall", my_print_stack},
+		{"pint", my_print_top},
 		{"pop", pop_top},
-		{"nop", nop},
-		{"swap", swap_nodes},
-		{"add", add_nodes},
-		{"sub", sub_nodes},
-		{"div", div_nodes},
-		{"mul", mul_nodes},
-		{"mod", mod_nodes},
-		{"pchar", print_char},
-		{"pstr", print_str},
-		{"rotl", rotl},
-		{"rotr", rotr},
+		{"nop", my_nop},
+		{"swap", my_swap_nodes},
+		{"add", my_add_nodes},
+		{"sub", my_sub_nodes},
+		{"div", my_div_nodes},
+		{"mul", my_ul_nodes},
+		{"mod", my_mod_nodes},
+		{"pchar", my_print_char},
+		{"pstr", my_print_str},
+		{"rotl", my_ro},
+		{"rotr", my_rot},
 		{NULL, NULL}
 	};
 

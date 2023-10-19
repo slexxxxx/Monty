@@ -18,8 +18,8 @@ void err_nabil(int error_ce, ...)
 	char *ol;
 	int line_num;
 
-	va_start(ag, error_code);
-	switch (error_code)
+	va_start(ag, error_ce);
+	switch (error_ce)
 	{
 		case 1:
 			fprintf(stderr, "USAGE: monty file\n");
@@ -42,7 +42,7 @@ void err_nabil(int error_ce, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	my_free_nodes();
 	exit(EXIT_FAILURE);
 }
 
