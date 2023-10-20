@@ -54,7 +54,7 @@ int parse_line(char *buffer, int line_number, int format)
 	const char *delim = "\n ";
 
 	if (buffer == NULL)
-		err(4);
+		err_nabil(4);
 
 	opcode = strtok(buffer, delim);
 	if (opcode == NULL)
@@ -88,7 +88,7 @@ void find_func(char *opcode, char *value, int ln, int format)
 		{"push", my_add_to_stack},
 		{"pall", my_print_stack},
 		{"pint", my_print_top},
-		{"pop", pop_top},
+		{"pop", my_pop_top},
 		{"nop", my_nop},
 		{"swap", my_swap_nodes},
 		{"add", my_add_nodes},
@@ -153,7 +153,7 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 		if (format == 0)
 			func(&node, ln);
 		if (format == 1)
-			add_to_queue(&node, ln);
+			my_add_to_qu(&node, ln);
 	}
 	else
 		func(&head, ln);

@@ -83,7 +83,7 @@ void mor_err_nabil(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	my_free_nodes();
 	exit(EXIT_FAILURE);
 }
 
@@ -111,6 +111,6 @@ void strng_err_nabil(int error_code, ...)
 		default:
 			break;
 	}
-	free_nodes();
+	my_free_nodes();
 	exit(EXIT_FAILURE);
 }

@@ -10,7 +10,7 @@ void my_ul_nodes(stack_t **stack, unsigned int line_number)
 	int sum;
 
 	if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
-		more_err(8, line_number, "mul");
+		mor_err_nabil(8, line_number, "mul");
 
 	(*stack) = (*stack)->next;
 	sum = (*stack)->n * (*stack)->prev->n;

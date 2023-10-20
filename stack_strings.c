@@ -10,7 +10,7 @@ void my_print_char(stack_t **stack, unsigned int line_number)
 	int ascii;
 
 	if (stack == NULL || *stack == NULL)
-		string_err(11, line_number);
+		strng_err_nabil(11, line_number);
 
 	ascii = (*stack)->n;
 	if (ascii < 0 || ascii > 127)
