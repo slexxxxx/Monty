@@ -72,6 +72,6 @@ void my_pop_top(stack_t **stack, unsigned int line_number)
 void my_print_top(stack_t **stack, unsigned int line_number)
 {
 	if (stack == NULL || *stack == NULL)
-		more_err(6, line_number);
+		mor_err_nabil(6, line_number);
 	printf("%d\n", (*stack)->n);
 }

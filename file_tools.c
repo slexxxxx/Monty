@@ -85,7 +85,7 @@ void find_func(char *opcode, char *value, int ln, int format)
 	int flag;
 
 	instruction_t func_list[] = {
-		{"push", my_add_to_stack},
+		{"push", add_to_stack},
 		{"pall", my_print_stack},
 		{"pint", my_print_top},
 		{"pop", my_pop_top},
@@ -115,7 +115,7 @@ void find_func(char *opcode, char *value, int ln, int format)
 		}
 	}
 	if (flag == 1)
-		err(3, ln, opcode);
+		err_nabil(3, ln, opcode);
 }
 
 
@@ -143,7 +143,7 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 			flag = -1;
 		}
 		if (val == NULL)
-			err(5, ln);
+			err_nabil(5, ln);
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
