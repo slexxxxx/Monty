@@ -85,7 +85,7 @@ void find_func(char *opcode, char *value, int ln, int format)
 	int flag;
 
 	instruction_t func_list[] = {
-		{"push", add_to_stack},
+		{"push", my_add_to_stack},
 		{"pall", my_print_stack},
 		{"pint", my_print_top},
 		{"pop", my_pop_top},
@@ -147,7 +147,7 @@ void call_fun(op_func func, char *op, char *val, int ln, int format)
 		for (i = 0; val[i] != '\0'; i++)
 		{
 			if (isdigit(val[i]) == 0)
-				err(5, ln);
+				err_nabil(5, ln);
 		}
 		node = create_node(atoi(val) * flag);
 		if (format == 0)
